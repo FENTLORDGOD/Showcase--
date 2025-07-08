@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verdant Studio — Landscaping Reinvented</title>
+  <meta name="description" content="Luxury landscaping design, crafted for beauty and sustainability. Verdant Studio delivers high-end outdoor environments that inspire.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Outfit', sans-serif; scroll-behavior: smooth; background: #0f0f0f; color: white; }
+    .gradient-text { background: linear-gradient(to right, #22c55e, #84cc16); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glass { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(14px); }
+  </style>
+</head>
+<body>
+<header class="fixed top-0 left-0 w-full z-50 bg-transparent">
+  <div class="flex items-center justify-between p-4 max-w-7xl mx-auto text-white relative z-50">
+    <div class="text-2xl font-bold">Verdant</div>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="flex flex-col justify-between w-8 h-6 focus:outline-none">
+        <span class="block w-full h-0.5 bg-white transition-transform duration-300 transform origin-left" id="line1"></span>
+        <span class="block w-full h-0.5 bg-white transition-opacity duration-300" id="line2"></span>
+        <span class="block w-full h-0.5 bg-white transition-transform duration-300 transform origin-left" id="line3"></span>
+      </button>
+    </div>
+    <nav class="hidden md:flex space-x-6 text-lg">
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#mission" class="hover:underline">Mission</a>
+      <a href="#stats" class="hover:underline">Stats</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-90 flex-col justify-center items-center text-white text-2xl space-y-8 hidden">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#mission" onclick="toggleMenu()">Mission</a>
+    <a href="#stats" onclick="toggleMenu()">Stats</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+</header>
+
+<script>
+  function toggleMenu() {
+    const m = document.getElementById('mobile-menu');
+    const l1 = document.getElementById('line1');
+    const l2 = document.getElementById('line2');
+    const l3 = document.getElementById('line3');
+    m.classList.toggle('hidden');
+    l1.classList.toggle('rotate-45'); l1.classList.toggle('translate-y-2');
+    l3.classList.toggle('-rotate-45'); l3.classList.toggle('-translate-y-2');
+    l2.classList.toggle('opacity-0');
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+  });
+</script>
+
+<section class="h-screen flex items-center justify-center text-center bg-cover bg-center pt-40 relative" style="background-image: url('https://images.unsplash.com/photo-1570021974784-c9c3b0f9b403?auto=format&fit=crop&w=1470&q=80');">
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div class="relative z-10 max-w-4xl px-6">
+    <h1 class="text-6xl font-extrabold gradient-text mb-6" data-aos="fade-down">Landscaping Reinvented</h1>
+    <p class="text-xl text-white mb-8" data-aos="fade-up">Artistry, sustainability, and luxury in every outdoor space.</p>
+    <a href="#contact" class="bg-lime-400 text-black px-6 py-3 rounded-full font-semibold text-lg hover:bg-lime-300 transition-all">Book Consultation</a>
+  </div>
+</section>
+
+<section id="about" class="py-24 bg-black text-center">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-bold gradient-text mb-6" data-aos="fade-up">Who We Are</h2>
+    <p class="text-lg text-gray-300" data-aos="fade-up" data-aos-delay="100">
+      Verdant Studio is where vision and nature meet. We blend high-end landscaping design with ecological integrity and modern craftsmanship.
+    </p>
+  </div>
+</section>
+
+<section id="mission" class="py-24 bg-gray-900 text-center">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl font-bold gradient-text mb-6" data-aos="fade-right">Our Mission</h2>
+    <p class="text-lg text-gray-300" data-aos="fade-left" data-aos-delay="100">
+      To elevate the outdoor experience through innovative design, sustainable practice, and artistic expression — shaping not just gardens, but lifestyles.
+    </p>
+  </div>
+</section>
+
+<section id="stats" class="py-24 bg-black text-center">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold gradient-text mb-12" data-aos="fade-up">Our Impact</h2>
+    <div class="grid md:grid-cols-4 gap-8 text-3xl font-semibold">
+      <div data-aos="zoom-in"><div id="count1" class="text-lime-400 text-6xl">0</div>Projects</div>
+      <div data-aos="zoom-in" data-aos-delay="100"><div id="count2" class="text-lime-400 text-6xl">0</div>Clients</div>
+      <div data-aos="zoom-in" data-aos-delay="200"><div id="count3" class="text-lime-400 text-6xl">0</div>Acres Designed</div>
+      <div data-aos="zoom-in" data-aos-delay="300"><div id="count4" class="text-lime-400 text-6xl">0</div>Green Awards</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-24 bg-gradient-to-r from-lime-500 via-green-400 to-green-300 text-black text-center">
+  <div class="max-w-xl mx-auto px-6" data-aos="fade-up">
+    <h2 class="text-4xl font-extrabold mb-6">Let's Talk</h2>
+    <p class="text-lg mb-8">Book a free consultation and site visit with our team.</p>
+    <form action="https://formspree.io/f/mwkgyjjv" method="POST" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg border border-black">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg border border-black">
+      <textarea name="message" placeholder="Your project details..." rows="4" required class="w-full p-3 rounded-lg border border-black"></textarea>
+      <button type="submit" class="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-all">Send</button>
+    </form>
+  </div>
+</section>
+
+<footer class="bg-black py-10 text-center text-gray-400 text-sm">
+  <p>&copy; 2025 Verdant Studio. All rights reserved.</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once: true });</script>
+<script>
+function animateCount(id, end) {
+  let start = 0, el = document.getElementById(id);
+  let speed = Math.floor(2000 / end);
+  let interval = setInterval(() => {
+    start++;
+    el.textContent = start;
+    if (start >= end) clearInterval(interval);
+  }, speed);
+}
+window.addEventListener("scroll", () => {
+  if (document.getElementById("count1").getBoundingClientRect().top < window.innerHeight) {
+    animateCount("count1", 120);
+    animateCount("count2", 89);
+    animateCount("count3", 450);
+    animateCount("count4", 17);
+  }
+}, { once: true });
+</script>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64d0c11fcc26a871b02fb7fc/1h5o7uvrm';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+</html>
